@@ -162,8 +162,8 @@ const siteConfig = {
             },
             {
                 name: "Baruch Sadogursky",
-                title: "Head of DevRel",
-                company: "TuxCare",
+                title: "DevRel",
+                company: "Tessl",
                 location: "Nashville, TN",
                 photo: "https://avatars.githubusercontent.com/u/247332?v=4",
                 bio: "Baruch Sadogursky did Java before it had generics, DevOps before there was Docker, and DevRel before it had a name. He started DevRel at JFrog when it was ten people and took it all the way to a successful $6B IPO by helping engineers solve problems. He is a co-author of 'Liquid Software' and 'DevOps Tools for Java Developers' books.",
