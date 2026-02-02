@@ -6,7 +6,7 @@ const videoConfig = [
         "id": "dBJMFOT4yGc",
         "title": "AI-Assisted Engineering Applied: The Battle of Agents | Jfokus 2026",
         "description": "Agentic AI-assisted engineering tools promise cleaner code, faster development, and fewer late-night debugging sessions. But do they truly...",
-        "thumbnail": "https://i.ytimg.com/vi/dBJMFOT4yGc/hqdefault.jpg",
+        "thumbnail": "https://i.ytimg.com/vi/dBJMFOT4yGc/maxresdefault.jpg",
         "isNew": true
     },
     {

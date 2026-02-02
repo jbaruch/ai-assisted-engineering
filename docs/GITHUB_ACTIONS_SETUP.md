@@ -27,7 +27,7 @@ The GitHub Actions workflow automatically:
 
 Ensure `.github/workflows/deploy.yml` exists and contains the updated workflow that:
 - Uses `YOUTUBE_API_KEY` from secrets
-- Calls `node generate-video-config.js` with the API key
+- Calls `bun generate-video-config.js` with the API key
 - Provides fallback behavior if API key is missing
 
 ## Workflow Behavior
@@ -117,10 +117,10 @@ You can test the API integration locally:
 export YOUTUBE_API_KEY="your-api-key-here"
 
 # Test single video
-node test-single-video.js
+bun test-single-video.js
 
 # Generate full config
-node generate-video-config.js
+bun generate-video-config.js
 ```
 
 ## Monitoring

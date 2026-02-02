@@ -28,10 +28,10 @@ jobs:
     - name: 📂 Checkout repository
       uses: actions/checkout@v4
       
-    - name: 🟢 Setup Node.js
-      uses: actions/setup-node@v4
+    - name: � Setup Bun
+      uses: oven-sh/setup-bun@v2
       with:
-        node-version: '18'
+        bun-version: latest
         
     - name: 🧪 Run tests
       run: |
@@ -40,7 +40,7 @@ jobs:
         # Run core functionality tests
         echo "📋 Running core functionality tests..."
         if [ -f "tests/test-core-functionality.js" ]; then
-          node tests/test-core-functionality.js
+          bun tests/test-core-functionality.js
           if [ $? -eq 0 ]; then
             echo "✅ Core functionality tests passed"
           else
@@ -55,7 +55,7 @@ jobs:
         echo "🔑 Running YouTube API tests..."
         if [ -f "tests/test-youtube-api.js" ]; then
           if [ -n "$YOUTUBE_API_KEY" ]; then
-            node tests/test-youtube-api.js
+            bun tests/test-youtube-api.js
             if [ $? -eq 0 ]; then
               echo "✅ YouTube API tests passed"
             else
@@ -111,7 +111,7 @@ jobs:
             
             if [ -n "$YOUTUBE_API_KEY" ]; then
               echo "🔑 YouTube API key found, using YouTube Data API v3..."
-              node generate-video-config.js
+              bun generate-video-config.js
               
               # Verify generation was successful
               if [ -f "config.js" ] && grep -q "videoConfig" config.js; then
@@ -180,10 +180,10 @@ jobs:
       - name: 📂 Checkout repository
         uses: actions/checkout@v4
         
-      - name: 🟢 Setup Node.js
-        uses: actions/setup-node@v4
+      - name: � Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: '18'
+          bun-version: latest
           
       - name: 🔍 Post-deployment verification
         run: |
@@ -192,7 +192,7 @@ jobs:
           # Run basic functionality tests to ensure deployment is working
           if [ -f "tests/test-core-functionality.js" ]; then
             echo "📋 Verifying core functionality after deployment..."
-            node tests/test-core-functionality.js
+            bun tests/test-core-functionality.js
             if [ $? -eq 0 ]; then
               echo "✅ Post-deployment verification passed"
             else

@@ -1,13 +1,13 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
- * 🎥 YouTube Config Generator (Node.js version)
+ * 🎥 YouTube Config Generator (JavaScript version)
  * 
  * This script takes a text file with YouTube URLs and generates a config.js file
  * with video IDs, titles, descriptions, and direct thumbnail links.
  * 
  * Usage:
- *   node generate-config.js urls.txt
- *   node generate-config.js urls.txt custom-config.js
+ *   bun generate-config.js urls.txt
+ *   bun generate-config.js urls.txt custom-config.js
  */
 
 const fs = require('fs');
@@ -199,7 +199,7 @@ async function main() {
     
     if (args.length === 0) {
         console.log('❌ Error: Please provide an input file with YouTube URLs');
-        console.log('Usage: node generate-config.js urls.txt [output-file.js]');
+        console.log('Usage: bun generate-config.js urls.txt [output-file.js]');
         console.log('Use --sample to create a sample URLs file');
         process.exit(1);
     }

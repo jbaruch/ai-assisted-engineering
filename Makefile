@@ -1,6 +1,7 @@
 # 🚀 AI-Assisted Engineering Landing Page Makefile
 # Using emoji and ASCII colors for better readability
 # Compatible with GNU Make 3.81+
+# Requires Bun for JavaScript execution
 
 SHELL := bash
 .SHELLFLAGS := -eu -o pipefail -c
@@ -18,10 +19,10 @@ help: ## 📋 Show this help message
 
 serve: ## 🌐 Start local development server
 	@echo "🌐 Starting local development server..."
-	@if command -v node >/dev/null 2>&1; then \
-		echo "✅ Using Node.js HTTP server"; \
+	@if command -v bun >/dev/null 2>&1; then \
+		echo "✅ Using Bun HTTP server"; \
 		echo "📦 Installing http-server if needed..."; \
-		npx http-server -p 8000 -o --silent; \
+		bun x http-server -p 8000 -o --silent; \
 	elif command -v python3 >/dev/null 2>&1; then \
 		echo "✅ Using Python 3 HTTP server (fallback)"; \
 		python3 -m http.server 8000; \
@@ -33,7 +34,7 @@ serve: ## 🌐 Start local development server
 		php -S localhost:8000; \
 	else \
 		echo "❌ No suitable HTTP server found"; \
-		echo "💡 Install Node.js and http-server will be auto-installed"; \
+		echo "💡 Install Bun and http-server will be auto-installed"; \
 		echo "💡 Or install Python to use as fallback"; \
 		exit 1; \
 	fi
@@ -71,7 +72,7 @@ deploy: ## 🚀 Deploy to GitHub Pages (requires git remote)
 test: ## 🧪 Run core functionality tests
 	@echo "🧪 Running core functionality tests..."
 	@if [ -f "tests/test-core-functionality.js" ]; then \
-		if node tests/test-core-functionality.js; then \
+		if bun tests/test-core-functionality.js; then \
 			echo "✅ Core functionality tests passed"; \
 		else \
 			echo "❌ Core functionality tests failed"; \
@@ -85,7 +86,7 @@ test: ## 🧪 Run core functionality tests
 test-all: ## 🧪 Run all test suites
 	@echo "🧪 Running all test suites..."
 	@if [ -f "tests/run-all-tests.js" ]; then \
-		node tests/run-all-tests.js; \
+		bun tests/run-all-tests.js; \
 	else \
 		echo "❌ Test runner not found"; \
 		exit 1; \
@@ -94,7 +95,7 @@ test-all: ## 🧪 Run all test suites
 test-api: ## 🧪 Run YouTube API integration tests
 	@echo "🧪 Running YouTube API tests..."
 	@if [ -f "tests/test-youtube-api.js" ]; then \
-		if node tests/test-youtube-api.js; then \
+		if bun tests/test-youtube-api.js; then \
 			echo "✅ YouTube API tests passed"; \
 		else \
 			echo "❌ YouTube API tests failed"; \
@@ -109,7 +110,7 @@ test-pbt: ## 🧪 Run property-based tests
 	@echo "🧪 Running property-based tests..."
 	@echo "⚠️  Property-based tests may take longer to run"
 	@if [ -f "tests/test-description-extraction.js" ]; then \
-		if node tests/test-description-extraction.js; then \
+		if bun tests/test-description-extraction.js; then \
 			echo "✅ Property-based tests passed"; \
 		else \
 			echo "❌ Property-based tests failed"; \
@@ -154,7 +155,7 @@ config: ## 🎥 Generate config.js from YouTube URLs with YouTube Data API v3
 			echo "💡 Set your API key: export YOUTUBE_API_KEY='your-key'"; \
 			echo "💡 Or use: make config YOUTUBE_API_KEY='your-key'"; \
 		fi; \
-		node generate-video-config.js; \
+		bun generate-video-config.js; \
 		if [ $$? -eq 0 ]; then \
 			echo "✅ Video config updated with real YouTube metadata!"; \
 		else \

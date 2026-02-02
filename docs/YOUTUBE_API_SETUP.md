@@ -78,12 +78,12 @@ The GitHub Actions workflow will:
 ### Method 1: Environment Variable (Recommended)
 ```bash
 export YOUTUBE_API_KEY="your-api-key-here"
-node generate-video-config.js
+bun generate-video-config.js
 ```
 
 ### Method 2: Command Line Argument
 ```bash
-node generate-video-config.js --api-key=your-api-key-here
+bun generate-video-config.js --api-key=your-api-key-here
 ```
 
 ### Method 3: Add to your shell profile

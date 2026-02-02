@@ -179,7 +179,7 @@ async function generateVideoConfig() {
         console.error('❌ YouTube API key is required!');
         console.log('💡 Set your API key using one of these methods:');
         console.log('   • Environment variable: export YOUTUBE_API_KEY="your-api-key"');
-        console.log('   • Command line argument: node generate-video-config.js --api-key=your-api-key');
+        console.log('   • Command line argument: bun generate-video-config.js --api-key=your-api-key');
         console.log('   • Get your API key at: https://console.developers.google.com/');
         process.exit(1);
     }

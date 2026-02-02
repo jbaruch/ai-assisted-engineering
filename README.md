@@ -54,18 +54,32 @@ From a YouTube URL like `https://www.youtube.com/watch?v=dQw4w9WgXcQ`, the video
 
 ## 🚀 Local Development
 
+### Prerequisites
+
+Install Bun (fast JavaScript runtime):
+
+```bash
+# macOS, Linux, WSL
+curl -fsSL https://bun.sh/install | bash
+
+# Or with Homebrew on macOS
+brew install bun
+```
+
+### Running Locally
+
 1. **Clone or download** the project files
 2. **Open** `index.html` in your browser, or
 3. **Serve locally** using a simple HTTP server:
 
 ```bash
-# Using Python 3
+# Using Bun (recommended)
+bun x http-server
+
+# Or using Python 3 (fallback)
 python -m http.server 8000
 
-# Using Node.js (if you have http-server installed)
-npx http-server
-
-# Using PHP
+# Or using PHP
 php -S localhost:8000
 ```
 
@@ -146,17 +160,47 @@ Add Google Analytics or other tracking by including the script in `index.html`:
 
 ## 🐛 Troubleshooting
 
+### Bun Installation Issues
+
+If you're migrating from Node.js or having trouble installing Bun:
+
+**Installation:**
+```bash
+# macOS, Linux, WSL
+curl -fsSL https://bun.sh/install | bash
+
+# Homebrew on macOS
+brew install bun
+
+# Verify installation
+bun --version
+```
+
+**Common Issues:**
+- If `bun` command not found after installation, restart your terminal or add to PATH
+- Bun requires macOS 10.15+, Linux kernel 5.1+, or Windows via WSL
+- For Windows users: Install WSL first, then install Bun in WSL
+
+**For Existing Contributors:**
+- This project has migrated from Node.js to Bun for improved performance
+- All `node` commands have been replaced with `bun`
+- Update your local setup by installing Bun (see above)
+- All existing JavaScript files work without modification
+
 ### Videos Not Loading
+
 - Check that YouTube video IDs are correct
 - Ensure videos are public and embeddable
 - Verify thumbnail URLs are accessible
 
 ### Deployment Issues
+
 - Check that all files are committed and pushed
 - Verify GitHub Pages is enabled in repository settings
 - Check GitHub Actions tab for deployment status
 
 ### Performance Issues
+
 - Optimize images before adding them
 - Consider using a CDN for better global performance
 - Enable browser caching with proper headers
