@@ -3,6 +3,13 @@
 // Add your YouTube video IDs and details here
 const videoConfig = [
     {
+        "id": "dBJMFOT4yGc",
+        "title": "AI-Assisted Engineering Applied: The Battle of Agents | Jfokus 2026",
+        "description": "Agentic AI-assisted engineering tools promise cleaner code, faster development, and fewer late-night debugging sessions. But do they truly...",
+        "thumbnail": "https://i.ytimg.com/vi/dBJMFOT4yGc/hqdefault.jpg",
+        "isNew": true
+    },
+    {
         "id": "vXdT-KGxz-E",
         "title": "Can We Trust AI-Generated Code? | Baruch Sadogursky & Leonid Igolnik, AI By the Bay25",
         "description": "Can We Trust Al-Generated Code? Maybe We've Been Asking the Wrong Question.\n\nNo one trusts AI-generated code. It looks right. It sounds confident. But...",
@@ -20,8 +27,7 @@ const videoConfig = [
         "id": "7_DL6Er9RlY",
         "title": "The Missing Protocol: How MCP Bridges LLMs and Data Streams | AI By The Bay 2025",
         "description": "Nobody's talking about this: MCP isn't just another way to build chatbots. It's the bridge we've been missing between AI reasoning and real-time data...",
-        "thumbnail": "https://i.ytimg.com/vi/7_DL6Er9RlY/maxresdefault.jpg",
-        "isNew": true
+        "thumbnail": "https://i.ytimg.com/vi/7_DL6Er9RlY/maxresdefault.jpg"
     },
     {
         "id": "jH5TPk_usmA",
