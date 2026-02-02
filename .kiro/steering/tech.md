@@ -8,8 +8,8 @@ inclusion: always
 
 **CRITICAL**: This is a vanilla JavaScript project with zero framework dependencies.
 
-- NEVER suggest React, Vue, Angular, Node.js modules, or any external libraries
-- NEVER use npm/yarn for dependencies - only for development tools like http-server
+- NEVER suggest React, Vue, Angular, or any external libraries that require build steps
+- NEVER use npm/yarn for dependencies - only Bun for development tools like http-server
 - All code must run directly in browsers without build steps or transpilation
 
 ### Required Tech Stack
@@ -28,10 +28,17 @@ inclusion: always
 ```bash
 make serve    # Start development server (REQUIRED for testing)
 make config   # Regenerate config.js from urls.txt (REQUIRED after URL changes)
+make test     # Run test suite
 make test     # Run all tests before commits
 make deploy   # Deploy to GitHub Pages
 make clean    # Clean generated files
 ```
+
+**Server options** (in priority order):
+
+1. `bun x http-server` (preferred - auto-installs)
+2. Python's `http.server`
+3. PHP's built-in server
 
 **CRITICAL WORKFLOW**:
 

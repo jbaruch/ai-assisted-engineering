@@ -706,28 +706,74 @@ function closeVideoModal() {
 
 // Initialize Animations and Scroll Effects
 function initializeAnimations() {
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.video-card, .event-card, .feature, .stat, .expert-card, .stat-item');
-    animateElements.forEach(el => {
-        observer.observe(el);
-    });
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Navbar background on scroll
     window.addEventListener('scroll', handleNavbarScroll);
+
+    // Initialize stat counter animation (only if not reduced motion)
+    if (!prefersReducedMotion) {
+        initializeStatCounter();
+    }
+}
+
+// Stat Counter Animation
+function initializeStatCounter() {
+    const statsSection = document.querySelector('.why-ai-stats');
+    if (!statsSection) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (!prefersReducedMotion) {
+                    animateStats();
+                }
+                statObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    statObserver.observe(statsSection);
+}
+
+// Animate stat numbers with count-up effect
+function animateStats() {
+    const statNumbers = document.querySelectorAll('.stat-item .stat-number');
+
+    statNumbers.forEach(stat => {
+        const text = stat.textContent;
+        const match = text.match(/^(\d+)(.*)$/);
+
+        if (match) {
+            const target = parseInt(match[1], 10);
+            const suffix = match[2] || '';
+            let current = 0;
+            const duration = 2000;
+            const startTime = performance.now();
+
+            function updateNumber(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // Ease-out function
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                current = Math.round(target * easeOut);
+
+                stat.textContent = current + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateNumber);
+                } else {
+                    stat.textContent = target + suffix;
+                }
+            }
+
+            requestAnimationFrame(updateNumber);
+        }
+    });
 }
 
 // Handle navbar background change on scroll
@@ -911,42 +957,9 @@ function trackVideoPlay(videoId, videoTitle) {
     }
 }
 
-// Add CSS animations dynamically
+// Modal opacity style only (other animations handled in CSS)
 const style = document.createElement('style');
 style.textContent = `
-    .video-card, .expert-card {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
-    }
-    
-    .video-card.animate-in, .expert-card.animate-in {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .feature {
-        opacity: 0;
-        transform: translateX(-30px);
-        transition: all 0.6s ease;
-    }
-    
-    .feature.animate-in {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    
-    .stat, .stat-item {
-        opacity: 0;
-        transform: scale(0.8);
-        transition: all 0.6s ease;
-    }
-    
-    .stat.animate-in, .stat-item.animate-in {
-        opacity: 1;
-        transform: scale(1);
-    }
-    
     .modal {
         opacity: 0;
         transition: opacity 0.3s ease;
