@@ -43,3 +43,56 @@ https://youtu.be/UcUE2FHQz2Q
 
 # RoboCoders: Judgment Day – AI IDEs Face Off | Dev2Next 2025
 https://youtu.be/IcWW5Ln5CYQ
+
+# The Missing Protocol: How MCP Bridges LLMs and Data Streams | SF JUG April 2026
+https://youtu.be/FB-n4hLZlj4
+
+# The Missing Protocol: How MCP Bridges LLMs and Data Streams | Garden State JUG March 2026
+https://youtu.be/S4hEhfsQumY
+
+# The Missing Protocol: How MCP Bridges LLMs and Data Streams | Stockholm Kafka Meetup February 2026
+https://youtu.be/h1YWIUDvj-8
+
+# Never Trust a Monkey: The Chasm, the Craft, and the Chain of AI-Assisted Code | JCON Europe 2026
+https://youtu.be/0pycZkvzecg
+
+# Back To The Future of Software: How to Survive The AI Apocalypse with Tests, Prompts and Specs | Arc of AI 2026
+https://youtu.be/DJvY2k34SxA
+
+# The AI-Native Developer: From Tools to Teammates | Arc of AI 2026
+https://youtu.be/M5AXc8iNY9Y
+
+# The Right 300 Tokens Beat 100k Noisy Ones | QCon London 2026
+https://youtu.be/3l8q2aeQJCE
+
+# Prompt-Test-Code: A New Productivity Boost for Developers | Devoxx Poland 2025
+# Skipped: YouTube title is "IIC talk Demo" — reinstate if source title is fixed
+# https://youtu.be/wb2C2ju_xRg
+
+# Prompt-Driven Development: Aligning Ideas, Tests, and Code | IJ Conference 2025
+# Skipped: YouTube title is "Prompt-Driven-Development: Windsurf Demo" — reinstate if source title is fixed
+# https://youtu.be/_k0FW9hEn9I
+
+# The Missing Protocol: How MCP Bridges LLMs and Data Streams | Lisbon Kafka Meetup 2026
+https://youtu.be/y85Xxx-vWZw
+
+# Codepocalypse Now: LangChain4j vs. Koog | JNation 2026
+https://youtu.be/T3I15mNEwUQ
+
+# The Missing Protocol: How MCP Bridges LLMs and Data Streams | Foobar.io Athens 2026
+https://youtu.be/T6PCF0s57fg
+
+# The Missing Protocol: How MCP Bridges LLMs and Data Streams | Arc of AI 2026
+https://youtu.be/1HPygt1_9z8
+
+# AI-Assisted Engineering Applied: The Battle of Agents | Arc of AI 2026
+https://youtu.be/TcObbKZkxEk
+
+# Codepocalypse Now: LangChain4j vs. Spring AI | Arc of AI 2026
+https://youtu.be/1x2agiUhi5A
+
+# Spec-kit with Agent Skills | Agent Johnson and Special Agent Johnson (livestream)
+https://youtu.be/POQRgUmTtGQ
+
+# Building Schema Registry Claude Skill | #SkillClinic (livestream)
+https://youtu.be/DrQ6J0ntrxo
